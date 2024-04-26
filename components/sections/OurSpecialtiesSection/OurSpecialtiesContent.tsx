@@ -1,41 +1,42 @@
-"use client"
-import React, { useState, useRef, useEffect } from "react"
+"use client";
+import React, { useState, useRef, useEffect } from "react";
+import AnimatedNavbar from "./AnimatedNavBar";
 
-type Props = {}
+type Props = {};
 
 interface HighlightPositioning {
-  index: number
-  height: number | undefined
-  width: number
-  left: number
+  index: number;
+  height: number | undefined;
+  width: number;
+  left: number;
 }
 
 const OurSpecialtiesContent = (props: Props) => {
-  const ownersRef = useRef<HTMLDivElement | null>(null)
-  const housingRef = useRef<HTMLDivElement | null>(null)
-  const detainerRef = useRef<HTMLDivElement | null>(null)
+  const ownersRef = useRef<HTMLDivElement | null>(null);
+  const housingRef = useRef<HTMLDivElement | null>(null);
+  const detainerRef = useRef<HTMLDivElement | null>(null);
   const [highlight, setHighlight] = useState<HighlightPositioning>({
     index: 0,
     height: 0,
     width: 0,
     left: 0,
-  })
+  });
 
   useEffect(() => {
-    let _left: number
-    let height: number
-    let width: number
+    let _left: number;
+    let height: number;
+    let width: number;
     if (ownersRef.current) {
-      const { left } = ownersRef.current.getBoundingClientRect()
-      _left = left
-      height = ownersRef.current.offsetHeight
-      width = ownersRef.current.offsetWidth
+      const { left } = ownersRef.current.getBoundingClientRect();
+      _left = left;
+      height = ownersRef.current.offsetHeight;
+      width = ownersRef.current.offsetWidth;
       setHighlight({
         index: 0,
         height: height,
         width: width,
         left: _left,
-      })
+      });
     }
     // return () => {
     //   setHighlight({
@@ -45,13 +46,14 @@ const OurSpecialtiesContent = (props: Props) => {
     //     left: _left,
     //   })
     // }
-  }, [])
+  }, []);
 
-  console.log(highlight)
-  const handleChangeMenuItem = (currentRef: HTMLDivElement) => {}
+  console.log(highlight);
+  const handleChangeMenuItem = (currentRef: HTMLDivElement) => {};
 
   return (
     <>
+      <AnimatedNavbar />
       <div className="relative flex pt-[50px] mb-[25px]">
         <div
           className={`absolute bg-secondary transition-all top-[50px] h-[${highlight.height}px] w-[${highlight.width}px]`}
@@ -105,7 +107,7 @@ const OurSpecialtiesContent = (props: Props) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default OurSpecialtiesContent
+export default OurSpecialtiesContent;
