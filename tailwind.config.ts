@@ -18,9 +18,16 @@ const config = {
         babyBlue: "#99DDFF",
         darkBlue: "#002E6D",
         lightBlue: "#6495ED",
+        grayBlue: "rgba(0, 46, 109, .1)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
+      },
+      screens: {
+        sm: "600px",
+        md: "906px",
+        lg: "1374px",
+        xl: "",
       },
       borderRadius: {
         lg: "var(--radius)",

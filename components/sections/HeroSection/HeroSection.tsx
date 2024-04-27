@@ -22,7 +22,7 @@ const HeroSection = (props: Props) => {
       </div>
       {/* CONTENT */}
       <div className="absolute z-4 h-screen w-screen pt-[150px] px-[75px] top-0">
-        <div className="pt-[135px] w-5/12">
+        <div className="pt-[135px] w-full lg:w-5/12">
           <h1 className="text-[85px] leading-[70px] tracking-tight font-bold text-darkBlue mb-[45px]">
             Proven Legal <br />
             Representation

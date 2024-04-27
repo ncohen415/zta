@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -27,8 +28,13 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        {/* <div className="flex flex-col items-center"> */}
+        {/* <div className="h-fit w-full max-w-[1900px]"> */}
         <Header />
         <main>{children}</main>
+        <Footer />
+        {/* </div> */}
+        {/* </div> */}
       </body>
     </html>
   )

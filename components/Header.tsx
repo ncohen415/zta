@@ -17,9 +17,9 @@ type Props = {}
 
 const Header = (props: Props) => {
   return (
-    <div className="h-[150px] absolute top-0 z-10 w-screen bg-transparent flex items-center justify-between px-[75px]">
+    <div className="h-[150px] absolute top-0 z-10 w-screen bg-transparent flex items-center justify-between px-[75px] max-w-[1900px]">
       <div className="h-fit">
-        <Image src={Logo} alt="hi" height={36} width={400} />
+        <Image src={Logo} alt="hi" height={36} width={250} />
       </div>
       <NavigationMenu>
         <NavigationMenuList>
