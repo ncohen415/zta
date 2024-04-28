@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 import SF from "@/public/sf.png"
 import { Button } from "@/components/ui/button"
+import SectionButton from "@/components/ContactButton"
 
 type Props = {}
 
@@ -34,7 +35,7 @@ const HeroSection = (props: Props) => {
             Each of our partners of Zanghi Torres Arshawsky LLP has more than 20
             years of experience in landlord-tenant law.
           </h3>
-          <Button size={"huge"}>Contact Us</Button>
+          <SectionButton text={"Contact Us"} secondary={false} />
         </div>
       </div>
     </>

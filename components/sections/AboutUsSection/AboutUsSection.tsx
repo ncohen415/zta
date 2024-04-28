@@ -2,12 +2,19 @@ import React from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Handshake from "@/public/handshake.webp"
+import ContactButton from "@/components/ContactButton"
 
 type Props = {}
 
 const AboutUsSection = (props: Props) => {
+  // const sendEmail = () => {
+  //   window.location.href = "mailto:info@ztalaw.com"
+  // }
   return (
-    <div className="h-fit min-h-screen w-screen px-[25px] pt-[135px] flex flex-col md:px-[75px] lg:flex-row">
+    <div
+      id="about-us"
+      className="h-fit min-h-screen w-screen px-[25px] pt-[135px] flex flex-col md:px-[75px] lg:flex-row"
+    >
       <div className="flex flex-col flex-1 pr-[20px] pb-[calc(100vh-800px)]">
         <div>
           <h2 className=" text-[40px] md:text-[50px] lg:text-[65px] leading-[70px] tracking-tigher font-extrabold text-darkBlue mb-[45px]">
@@ -30,7 +37,7 @@ const AboutUsSection = (props: Props) => {
             ethical.
           </p>
         </div>
-        <Button size={"huge"}>Contact Us</Button>
+        <ContactButton text="Contact Us" />
       </div>
       <div className="flex-1 relative pl-[20px] hidden lg:block">
         <div className="absolute right-0 bg-primary h-[800px] w-[600px]" />

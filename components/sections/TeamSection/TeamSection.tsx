@@ -3,19 +3,21 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import John from "@/public/john.jpg"
 import Francisco from "@/public/francisco.jpg"
+import MeetTheTeamButton from "@/components/MeetTheTeamButton"
 
 type Props = {}
 
 const TeamSection = (props: Props) => {
   return (
-    <div className="flex flex-col h-fit min-h-screen w-screen px-[25px] pt-[135px] bg-grayBlue pb-[75px] md:px-[75px] ">
+    <div
+      id="team"
+      className="flex flex-col h-fit min-h-screen w-screen px-[25px] pt-[135px] bg-grayBlue pb-[75px] md:px-[75px] "
+    >
       <div className="flex flex-col justify-between items-center md:flex-row mb-[50px]">
         <h2 className="text-[31px] md:text-[40px] lg:text-[65px] leading-[70px] tracking-tigher font-extrabold text-primary mb-[30px] md:mb-[0]">
           Experienced Attornies
         </h2>
-        <Button className="font-semibold" size={"huge"} variant={"secondary"}>
-          Meet the Whole Team
-        </Button>
+        <MeetTheTeamButton text="Meet the Whole Team" secondary={true} />
       </div>
       <p className="text-primary text-[20px] mb-[50px] font-semibold">
         Each of our partners has more than 20 years of experience in

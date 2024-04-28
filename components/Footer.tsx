@@ -3,6 +3,7 @@ import Logo from "@/public/logo.png"
 import Image from "next/image"
 import { MapPin, Phone, Mail } from "react-feather"
 import { getCourthouseWebsites } from "@/actions"
+import QuickLinks from "./QuickLinks"
 
 type Props = {}
 
@@ -14,6 +15,7 @@ interface CourthouseWebsite {
 const Footer = async (props: Props) => {
   const data = await getCourthouseWebsites()
   const websites = data.data.allCourthouseWebsites
+
   return (
     <div className="h-fit min-h-[50vh] w-screen bg-babyBlue flex flex-col justify-between p-[25px] md:p-[75px] md:flex-row">
       <div className="flex-auto min-w-[50%] flex flex-col mb-[50px] md:mb-[unset]">
@@ -28,25 +30,29 @@ const Footer = async (props: Props) => {
               Resources
             </h3>
             <ul>
-              <li className="mb-[10px] text-primary">SF Rent Board</li>
-              <li className="mb-[10px] text-primary">Oakland Rent Board</li>
               <li className="mb-[10px] text-primary">
-                California Department of Fair Employment & Housing
+                <a href="https://www.sf.gov/departments/rent-board">
+                  SF Rent Board
+                </a>
               </li>
-              <li className="text-primary">HUD.gov Handbooks</li>
+              <li className="mb-[10px] text-primary">
+                <a href="https://www.oaklandca.gov/boards-commissions/housing-residential-rent-and-relocation-board">
+                  Oakland Rent Board
+                </a>
+              </li>
+              <li className="mb-[10px] text-primary">
+                <a href="https://calcivilrights.ca.gov/">
+                  California Department of Fair Employment & Housing
+                </a>
+              </li>
+              <li className="text-primary">
+                <a href="https://www.hud.gov/program_offices/administration/hudclips/handbooks/hsgh">
+                  HUD.gov Handbooks
+                </a>
+              </li>
             </ul>
           </div>
-          <div className="flex-auto max-w-[33.33%] px-[5px]">
-            <h3 className="text-primary text-[20px] font-bold mb-[15px]">
-              Quick Links
-            </h3>
-            <ul>
-              <li className="mb-[10px] text-primary">About Us</li>
-              <li className="mb-[10px] text-primary">Specialties</li>
-              <li className="mb-[10px] text-primary">Our Team</li>
-              <li className="text-primary">Trainings & Seminars</li>
-            </ul>
-          </div>
+          <QuickLinks />
           <div className="flex-auto max-w-[33.33%]">
             <h3 className="text-primary text-[20px] font-bold mb-[15px]">
               Contact Us

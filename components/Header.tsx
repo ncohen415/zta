@@ -40,14 +40,28 @@ const Header = (props: Props) => {
     }
   }, [])
 
+  const goToSection = (id: string) => {
+    const targetDiv = document.getElementById(id)
+    targetDiv?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  }
+
+  const sendEmail = () => {
+    window.location.href = "mailto:info@ztalaw.com"
+  }
+
   return (
     <div className="h-[150px] absolute top-0 z-10 w-screen bg-transparent flex items-center justify-between px-[25px] md:px-[75px] max-w-[1900px]">
       <div className="h-fit">
-        {windowWidth && windowWidth > 937 ? (
-          <Image src={Logo} alt="hi" height={36} width={250} />
-        ) : (
-          <Image src={MiniLogo} alt="hi" height={36} width={116} />
-        )}
+        <Link href="/">
+          {windowWidth && windowWidth > 937 ? (
+            <Image src={Logo} alt="hi" height={36} width={250} />
+          ) : (
+            <Image src={MiniLogo} alt="hi" height={36} width={116} />
+          )}
+        </Link>
       </div>
 
       <NavigationMenu
@@ -61,53 +75,62 @@ const Header = (props: Props) => {
       >
         <NavigationMenuList className="flex flex-col md:flex-row">
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <div
+              className="cursor-pointer"
+              onClick={() => goToSection("about-us")}
+            >
               <NavigationMenuLink className={`${navigationMenuTriggerStyle()}`}>
                 <p className="text-[30px] font-bold mb-[60px] md:text-base md:font-medium md:mb-[unset]">
                   About Us
                 </p>
               </NavigationMenuLink>
-            </Link>
+            </div>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <div
+              className="cursor-pointer"
+              onClick={() => goToSection("specialties")}
+            >
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 <p className="text-[30px] font-bold mb-[60px] md:text-base md:font-medium md:mb-[unset]">
                   {" "}
                   Specialties
                 </p>
               </NavigationMenuLink>
-            </Link>
+            </div>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <div className="cursor-pointer" onClick={() => goToSection("team")}>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 <p className="text-[30px] font-bold mb-[60px] md:text-base md:font-medium md:mb-[unset]">
                   {" "}
                   Our Team
                 </p>
               </NavigationMenuLink>
-            </Link>
+            </div>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <div
+              className="cursor-pointer"
+              onClick={() => goToSection("trainings")}
+            >
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 <p className="text-[30px] font-bold mb-[60px] md:text-base md:font-medium md:mb-[unset]">
                   {" "}
                   Trainings
                 </p>
               </NavigationMenuLink>
-            </Link>
+            </div>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <div className="cursor-pointer" onClick={() => sendEmail()}>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 <p className="text-[30px] font-bold mb-[60px] md:text-base md:font-medium md:mb-[unset]">
                   {" "}
                   Contact
                 </p>
               </NavigationMenuLink>
-            </Link>
+            </div>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

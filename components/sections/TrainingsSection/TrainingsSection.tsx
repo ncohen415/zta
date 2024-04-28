@@ -1,7 +1,7 @@
 import React from "react"
 import { Button } from "@/components/ui/button"
 import { getTrainings } from "@/actions"
-
+import ContactButton from "@/components/ContactButton"
 type Props = {}
 
 interface Training {
@@ -14,14 +14,15 @@ const TrainingsSection = async (props: Props) => {
   const trainings = data.data.allTrainings
 
   return (
-    <div className="flex flex-col min-h-screen w-screen px-[25px] pt-[135px] bg-lightBlue pb-[75px] md:px-[75px]">
+    <div
+      id="trainings"
+      className="flex flex-col min-h-screen w-screen px-[25px] pt-[135px] bg-lightBlue pb-[75px] md:px-[75px]"
+    >
       <div className="flex flex-col justify-between items-center mb-[50px] md:flex-row">
         <h2 className="text-[31px] md:text-[40px] lg:text-[65px] leading-[70px] tracking-tigher font-extrabold text-white m-0">
           Trainings & Seminars
         </h2>
-        <Button className="font-semibold" size={"huge"} variant={"secondary"}>
-          Contact us to Learn More
-        </Button>
+        <ContactButton text="Contact us to Learn More" secondary={true} />
       </div>
       <p className="text-white text-[20px] mb-[50px] font-semibold">
         Zanghi Torres Arshawsky LLP provides comprehensive training sessions for
