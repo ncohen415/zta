@@ -9,7 +9,7 @@ const HeroSection = (props: Props) => {
   return (
     <>
       {/* BACKGROUND */}
-      <div className="h-screen w-screen relative z-1 top-0">
+      <div className="h-fit min-h-screen w-screen relative z-1 top-0">
         <Image
           className="absolute top-0 z-2"
           src={SF}
@@ -21,9 +21,9 @@ const HeroSection = (props: Props) => {
         <div className="h-screen w-screen bg-babyBlue absolute z-3 top-0 opacity-80" />
       </div>
       {/* CONTENT */}
-      <div className="absolute z-4 h-screen w-screen pt-[150px] px-[75px] top-0">
-        <div className="pt-[135px] w-full lg:w-5/12">
-          <h1 className="text-[85px] leading-[70px] tracking-tight font-bold text-darkBlue mb-[45px]">
+      <div className="absolute z-4 h-screen w-screen pt-[150px] top-0 px-[25px] md:px-[75px]">
+        <div className="pt-[135px] w-full md:w-8/12 lg:w-5/12">
+          <h1 className="text-[50px] leading-[40px] tracking-tight font-bold text-primary mb-[45px] md:text-[65px] md:leading-[55px] lg:text-[85px] lg:leading-[70px] ">
             Proven Legal <br />
             Representation
           </h1>

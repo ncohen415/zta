@@ -12,10 +12,11 @@ interface Training {
 const TrainingsSection = async (props: Props) => {
   const data = await getTrainings()
   const trainings = data.data.allTrainings
+
   return (
-    <div className="flex flex-col min-h-screen w-screen px-[75px] pt-[135px] bg-lightBlue pb-[75px]">
-      <div className="flex justify-between items-center mb-[50px]">
-        <h2 className="text-[65px] leading-[70px] tracking-tigher font-extrabold text-white m-0">
+    <div className="flex flex-col min-h-screen w-screen px-[25px] pt-[135px] bg-lightBlue pb-[75px] md:px-[75px]">
+      <div className="flex flex-col justify-between items-center mb-[50px] md:flex-row">
+        <h2 className="text-[31px] md:text-[40px] lg:text-[65px] leading-[70px] tracking-tigher font-extrabold text-white m-0">
           Trainings & Seminars
         </h2>
         <Button className="font-semibold" size={"huge"} variant={"secondary"}>
@@ -31,10 +32,10 @@ const TrainingsSection = async (props: Props) => {
         insights into the fundamental principles of unlawful detainer (eviction)
         actions.
       </p>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="justify-items-center grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-5 lg:grid-cols-4 lg:gap-4">
         {trainings?.map((training: Training) => {
           return (
-            <div className="aspect-square bg-primary py-[20px] px-[20px] flex flex-col justify-center items-center">
+            <div className="aspect-square bg-primary py-[20px] px-[20px] flex flex-col justify-center items-center w-[350px] md:w-[100%] ">
               <p className="text-white text-center font-semibold mb-[20px] opacity-70">
                 {training.company}
               </p>

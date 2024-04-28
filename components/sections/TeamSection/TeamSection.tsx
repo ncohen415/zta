@@ -8,9 +8,9 @@ type Props = {}
 
 const TeamSection = (props: Props) => {
   return (
-    <div className="flex flex-col h-screen w-screen px-[75px] pt-[135px] bg-grayBlue">
-      <div className="flex justify-between items-center mb-[50px]">
-        <h2 className="text-[65px] leading-[70px] tracking-tigher font-extrabold text-primary m-0">
+    <div className="flex flex-col h-fit min-h-screen w-screen px-[25px] pt-[135px] bg-grayBlue pb-[75px] md:px-[75px] ">
+      <div className="flex flex-col justify-between items-center md:flex-row mb-[50px]">
+        <h2 className="text-[31px] md:text-[40px] lg:text-[65px] leading-[70px] tracking-tigher font-extrabold text-primary mb-[30px] md:mb-[0]">
           Experienced Attornies
         </h2>
         <Button className="font-semibold" size={"huge"} variant={"secondary"}>
@@ -25,8 +25,8 @@ const TeamSection = (props: Props) => {
         breadth of experience in all matters relating to the ownership and
         management of residential and commercial property.
       </p>
-      <div className="flex justify-around">
-        <div className="relative">
+      <div className="flex flex-col items-center lg:flex-row lg:justify-around">
+        <div className="relative w-fit mb-[100px] lg:mb-[0]">
           <Image src={John} alt="" height={500} width={500} />
           <div className="absolute flex flex-col justify-center items-center bg-primary w-[395px] h-[115px] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <h3 className="text-[20px] font-black text-white mb-[10px]">
@@ -35,7 +35,7 @@ const TeamSection = (props: Props) => {
             <h5 className="text-[18px] font-bold text-secondary">PARTNER</h5>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative w-fit">
           <Image src={Francisco} alt="" height={500} width={500} />
           <div className="absolute flex flex-col justify-center items-center bg-primary w-[395px] h-[115px] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <h3 className="text-[20px] font-black text-white mb-[10px]">

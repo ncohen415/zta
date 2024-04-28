@@ -5,7 +5,7 @@ import OurSpecialtiesSection from "@/components/sections/OurSpecialtiesSection/O
 import TeamSection from "@/components/sections/TeamSection/TeamSection"
 import TrainingsSection from "@/components/sections/TrainingsSection/TrainingsSection"
 import ContactSection from "@/components/sections/ContactSection/ContactSection"
-
+import Header from "@/components/Header"
 export default function Home() {
   return (
     <div>
